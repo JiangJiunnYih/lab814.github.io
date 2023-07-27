@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LAB 814 公用電腦使用預約系統</title>
+    <link rel="icon" type="image/x-icon" href="webicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { font-family: Arial; background-image: url('newbg.jpg'); background-repeat: no-repeat;
+  background-size: cover;}
+    h2 {
+      text-align: center; /* Center the h2 element */
+    }
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.button2 {
+  width: 100%; padding: 10px; background-color: #039BE5; color: #fff; border: none; cursor: pointer;
+}
+
+.button2:hover {
+  background-color: #0277BD;
+}
+
+.button {
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+    
+</style>
+
+<script>
+      // Function to update the time and date on the page
+      function updateTime() {
+        // Get the current date and time
+        var now = new Date();
+
+        // Format the time as HH:MM:SS
+        var hours = now.getHours().toString().padStart(2, '0');
+        var minutes = now.getMinutes().toString().padStart(2, '0');
+        var seconds = now.getSeconds().toString().padStart(2, '0');
+        var timeString = hours + ':' + minutes + ':' + seconds;
+
+        // Format the date as YYYY-MM-DD
+        var year = now.getFullYear();
+        var month = (now.getMonth() + 1).toString().padStart(2, '0');
+        var day = now.getDate().toString().padStart(2, '0');
+        var dateString = year + '-' + month + '-' + day + '&nbsp;&nbsp;&nbsp;';
+
+        // Update the HTML element with the time and date
+        var dateTimeString = '當前時間: ' + dateString + timeString;
+        show = dateTimeString.fontsize(2)
+        document.getElementById('datetime').innerHTML = show;
+      }
+      setInterval(updateTime, 1000);
+    </script>
+    
+</head>
+<body>
+
+<h2>LAB 814 公用電腦使用預約系統</h2><br>
+<h3>實驗室公用電腦預約系統預約說明與規則</h3>
+<P>1. 本預約表單之目的係為避免有多位同學同時登入同台電腦造成爭搶滑鼠或資料遺失，故請勿於他人預約時段登入有預約之電腦，感謝配合</P>
+<p>2. 本表單為本實驗室專用，請勿讓非本實驗室之同學在未經老師許可之情形下填寫此預約表單，如經發現將取消該次預約</p>
+<p>3. 預約單位以天為計，每人每次限預約 7 天時間，如有超過 7 天預約之需求，請與水老師聯繫</p>
+<p>4. 預約電腦共分兩台，1101A 電腦所指為近日新安裝於碩二實驗室 MONTECH 之電腦；LAB 814 則是指目前安裝於老師辦公室靠窗之電腦</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, '1101A 電腦預約')">1101A 電腦預約</button>
+  <button class="tablinks" onclick="openCity(event, 'LAB 814 電腦預約')">LAB 814 電腦預約</button>
+  <button class="tablinks" onclick="openCity(event, '1101A 當前預約狀況')">1101A 當前預約狀況</button>
+  <button class="tablinks" onclick="openCity(event, 'LAB 814 當前預約狀況')">LAB 814 當前預約狀況</button>
+</div>
+
+<div id="1101A 電腦預約" class="tabcontent">
+  <h3>1101A 電腦預約</h3>
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0HvUd61LUMnleLAsEulhccFj0VP7VyE4nMxSCNZP8s0stMMl2fKN7qjErg9xjXWEd5HX4F0jBy?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+</div>
+
+<div id="LAB 814 電腦預約" class="tabcontent">
+  <h3>LAB 814 電腦預約</h3>
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ00ew8v82in3Sx1da_Y9paSdCNmZJePmeidJ2KbDIIMPIaTZS1UlnmTmmokDAVIX07fqZ6cu_cM?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+</div>
+
+<div id="1101A 當前預約狀況" class="tabcontent">
+  <h3>1101A 當前預約狀況</h3>
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTaipei&showNav=1&showTitle=0&showTabs=0&showPrint=0&showCalendars=0&showTz=0&src=bGFiMTEwMXJlc2VydmF0aW9uc3lzdGVtQGdtYWlsLmNvbQ&color=%23039BE5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div id="LAB 814 當前預約狀況" class="tabcontent">
+  <h3>LAB 814 當前預約狀況</h3>
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTaipei&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1&src=bGFiODE0cmVzZXJ2YXRpb3N5c3RlbUBnbWFpbC5jb20&color=%23039BE5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<br><form onsubmit="return logout()">
+    <button class="button button2">登出</button>
+  </form><br>
+
+<div class="wrapper">
+    <div class="content">
+        <footer class="wrapper" style="background-color:#2B2B2B;text-align:left;padding:0px;margin-top:0px;color:#F5F5F5;bottom: 0;"><br><br>
+        實驗室位址:&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/maps?q=24.7847265,120.9973599" target="_blank" style="color: #FFFFFF;">新竹市東區大學路1001號 綜合一館 LAB 814</a>
+
+<p>碩一實驗室:&nbsp;&nbsp;&nbsp;新竹市東區大學路1001號 綜合一館 10 樓 統倉</p>
+<p>碩二實驗室:&nbsp;&nbsp;&nbsp;新竹市東區大學路1001號 綜合一館 11 樓 1101A</p>
+            <p id="datetime"></p><br><br>
+            <div style="text-align:center;"><h6><font face=@標楷體 size=2>Copyright © 2023 JIANG, JIUNN-YIH</h6>
+        </footer>
+    </div>
+</div>
+
+<script>
+    // Check if the user is logged in by verifying the presence of the login flag in session storage.
+    var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn) {
+      // If the user is not logged in, redirect them back to the login page.
+      window.location.href = 'index.html';
+    }
+  </script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Set the default tab as "1101A 電腦預約"
+  document.getElementById("1101A 電腦預約").style.display = "block";
+  document.getElementsByClassName("tablinks")[0].classList.add("active");
+});
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+    function logout() {
+    sessionStorage.clear();
+    alert("Logout Successfully");
+    setTimeout(function() {
+      window.location.replace("index.html");
+    }, 500);
+    return false;
+  }
+</script>
+   
+</body>
+</html> 
