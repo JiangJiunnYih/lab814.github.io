@@ -6,10 +6,10 @@
 
     <style>
         form { max-width: 300px; margin: 0 auto; }
-    input { width: 100%; padding: 10px; margin-bottom: 10px; }
-    button { width: 109%; padding: 10px; background-color: #039BE5; color: #fff; border: none; cursor: pointer; }
-    button:hover { background-color: #0277BD; }
-    h2 { text-align: center; } /* Center the h2 element */
+        input { width: 100%; padding: 10px; margin-bottom: 10px; }
+        button { width: 109%; padding: 10px; background-color: #039BE5; color: #fff; border: none; cursor: pointer; }
+        button:hover { background-color: #0277BD; }
+        h2 { text-align: center; } /* Center the h2 element */
     </style>
 </head>
 <body style="background-color:#F2FFFF;">
@@ -21,5 +21,10 @@
         <br>
         <button type="submit">Login</button>
     </form>
+    <?php
+        if (isset($_GET['login_error']) && $_GET['login_error'] === 'true') {
+            echo '<p style="color: red; text-align: center;">Invalid username or password.</p>';
+        }
+    ?>
 </body>
 </html>
